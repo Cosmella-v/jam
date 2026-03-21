@@ -1,3 +1,7 @@
+# v1.0.6
+
+* Fix jam spam exploit with more menu icons installed
+
 # v1.0.5
 
 * Fix daily crash

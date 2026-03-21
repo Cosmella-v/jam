@@ -16,7 +16,7 @@ bool ProMenuGameLayer::init() {
 }
 
 void ProMenuGameLayer::destroyPlayer() {
-    if (!m_playerObject) {
+    if (!m_playerObject || m_playerObject->getTag() == 12879384) {
         return MenuGameLayer::destroyPlayer();
     }
 
