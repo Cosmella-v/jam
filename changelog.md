@@ -1,3 +1,7 @@
+# v1.0.7
+
+* Fixed jam still giving jam when beating a level with safemode
+
 # v1.0.6
 
 * Fix jam spam exploit with more menu icons installed

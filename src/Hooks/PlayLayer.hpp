@@ -15,6 +15,7 @@ class $modify(ProPlayLayer, PlayLayer) {
 	
 	static void onModify(auto& self) {
         (void)self.setHookPriorityPre("PlayLayer::destroyPlayer", Priority::Last + 21903809);
+        (void)self.setHookPriorityAfterPre("PlayLayer::levelComplete", "eclipse.eclipse-menu");
     }
 
     CCPoint getPlayerScreenPos();
