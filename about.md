@@ -6,7 +6,13 @@ Mod [commissioned](https://www.fiverr.com/zilkowo/make-you-a-geometry-dash-mod-o
 
 This mod adds a Jam currency to your game which can be used to buy things that you might or might not be able to unlock normally in the vanilla game!
 
+# How to get & use jam
+
+<cp>Jam can be earned by beating levels</c>. And can be used in <cg>The Treasure Room</c> in a new shop.
+
 # info
+
+you have to rebeat levels to get ur jam
 
 whenever you buy something it is only unlocked while you have the mod installed so ur savefile is not modified
 
