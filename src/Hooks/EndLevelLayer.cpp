@@ -64,8 +64,8 @@ void ProEndLevelLayer::addRewardLayer() {
 	jm.m_currencyLayerShouldRewardJam = false;
 }
 
-void ProEndLevelLayer::showLayer(bool p0) {
-	EndLevelLayer::showLayer(p0);
+void ProEndLevelLayer::showLayer(bool instant) {
+	EndLevelLayer::showLayer(instant);
 	
 	auto f = m_fields.self();
 
@@ -100,14 +100,21 @@ void ProEndLevelLayer::showLayer(bool p0) {
 	f->m_jamContainer->addChild(icon);
 	
 	m_mainLayer->addChild(f->m_jamContainer, 10);
-	
-	auto delay = 0.f;
-	auto lidDelay = 0.f;
-	
-	if (m_coinsToAnimate && !GameManager::get()->getGameVariable("0168")) {
+	float delay = 0.f;
+	float lidDelay = 0.f;
+	if (m_coinsToAnimate && !(instant || GameManager::get()->getGameVariable("0168")) ) {
 		delay = m_coinsToAnimate->count() * 0.35f + 0.7f;
 		lidDelay = delay - 0.7f;
 	}
+
+	if (auto delayObject = typeinfo_cast<CCFloat*>(this->getUserObject("jam-reward-delay"_spr))){
+		delay += delayObject->getValue();
+		if (delay >= 0.7) {
+			lidDelay = delay - 0.7f;
+		} else {
+			lidDelay = 0.f;
+		};
+	};
 
 	runAction(CCSequence::create(
 		CCDelayTime::create(lidDelay),
